@@ -1,4 +1,13 @@
-<ul>
-  <li>home</li>
-  <li>room</li>
-</ul>
+<a href="/">
+  <h1>Logo</h1>
+</a>
+<form method="GET" action="{%url 'home'%}">
+  <input type="text" name="q" placeholder="search rooms..." />
+</form>
+<p>Hello {{request.user}}</p>
+{% if request.user.is_authenticated%}
+<a href="{%url 'logout'%}">Logout</a>
+{%else%}
+<a href="{%url 'login'%}">login</a>
+{%endif%}
+<hr />
